@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="image.png">
+  <link rel="stylesheet" href="nimbunthan.css">
+  <title>Cafe Shop</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+    }
+
+    img,
+    video,
+    svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+
+    /* image float */
+    .float-img {
+      float: left;
+      margin-left: 15px;
+      margin-right: 15px;
+      width: 200px;
+      height: 200px;
+    }
+
+    /* dis play example */
+    .demo p {
+      background-color: rgb(85, 223, 241);
+      padding: 10px;
+    }
+
+    .demo span {
+      background-color: rgb(127, 204, 91);
+      color: white;
+      padding: 10px;
+    }
+
+    p.ex1 {
+      display: none;
+    }
+
+    p.ex2 {
+      display: inline;
+    }
+
+    p.ex3 {
+      display: block;
+    }
+
+    p.ex4 {
+      display: inline-block;
+    }
+
+    p.ex5 {
+      display: flex;
+    }
+
+    p.ex6 {
+      display: grid;
+    }
+
+    /* city boxes */
+    .container {
+      background: lightblue;
+      padding: 10px;
+    }
+
+    .flex-container {
+      background: lightblue;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .city {
+      background: white;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .flexbox {
+      background: white;
+      padding: 10px;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    #box {
+      text-align: center;
+      padding: 20px;
+      font-weight: bold;
+    }
+
+    /* life quote (flex) */
+    .box {
+      width: 100%;
+      border: 4px solid rgb(96, 139, 168);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 18px;
+      background: lightblue;
+      padding: 30px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .box .item {
+      background: royalblue;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 30px 16px;
+      border-radius: 8px;
+      flex: 1;
+      min-width: 150px;
+      text-align: center;
+    }
+
+    .box .html {
+      background: lightcoral;
+      color: white;
+    }
+
+    .box .css {
+      background: lightcyan;
+      color: black;
+    }
+
+    .box .javaScript {
+      background: tomato;
+      color: midnightblue;
+    }
+
+    /* life vision (grid) */
+    .gridbox {
+      width: 100%;
+      border: 4px solid rgb(96, 139, 168);
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 18px;
+      background: lightblue;
+      padding: 30px;
+    }
+
+    .gridbox .item {
+      background: royalblue;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 30px 16px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .gridbox .html {
+      background: lightcoral;
+      color: white;
+    }
+
+    .gridbox .css {
+      background: lightcyan;
+      color: black;
+    }
+
+    .gridbox .javaScript {
+      background: tomato;
+      color: midnightblue;
+    }
+
+    h2 {
+      margin-left: 200px;
+      text-decoration: underline;
+      font-size: larger;
+      color: rgb(70, 182, 70);
+    }
+
+    table,
+    th,
+    td {
+      border: 1.5px solid rgb(0, 0, 0);
+      border-collapse: collapse;
+      padding: 10px;
+      margin-left: 20px;
+    }
+
+    td {
+      text-align: center;
+    }
+
+    th {
+      color: rgb(96, 143, 231);
+    }
+
+    ul {
+      margin-left: 0;
+      padding-left: 20px;
+    } 
+    #animation {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(184, 242, 145);
+      position: relative;
+      animation-name: boxAnimation;
+      animation-duration: 4s;
+      /*animation-delay: 2s;*/
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes boxAnimation {
+      0% {
+        background-color: red;
+      }
+
+      25% {
+        background-color: yellow;
+      }
+
+      50% {
+        background-color: blue;
+      }
+
+      100% {
+        background-color: green;
+      }
+    }
+    .individuale {
+     width: 180px;
+     height: 180px;
+     border: 1px solid lightgray;
+     margin: 30px;
+     perspective: 600px;
+   }
+   .box {
+     width: 100%;
+     height: 100%;
+     background-color: green;
+     line-height: 180px;
+     text-align: center;
+     font-size: 20px;
+     transform: rotateX(45deg);
+     /*transform: rotateY(45deg);*/
+     /*transform: rotateZ(45deg);*/
+     transform: translateZ(-100px);
+   }
+    #myDiv {
+     width: 150px;
+     height: 150px;
+     background-color: yellow;
+     border: 1px solid black;
+     box-shadow: 5px 10px #888888;
+     /*transform: translate(50px,100px);*/
+     /*transform: rotate(20deg);*/
+     /*transform: rotate(-20deg);*/
+     /*transform: scale(1,2);*/
+     /*transform: scaleX(2);*/
+     /*transform: scaleY(0.5);*/
+     /*transform: skewX(20deg);*/
+   }
+    #myDiv {
+     transform: translate(50px,100px);
+      transform: rotate(20deg);
+     /*transform: rotate(-20deg);*/
+     /*transform: scale(1,2);*/
+     /*transform: scaleX(2);*/
+     /*transform: scaleY(0.5);*/
+     /*transform: skewX(20deg);*/
+     /*transform: skew(20deg,10deg);*/
+      }
+    div#floatImage{
+     width: 100px;
+     height: 100px;
+     background-color: rgb(208, 64, 64);
+     position: relative;
+     animation-name: myAnimation;
+     animation-duration: 4s;
+     animation-iteration-count: infinite;
+     animation-direction: alternate;  
+   }
+@keyframes myAnimation {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:20px;}
+  75%  {background-color:green; left:0px; top:20px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+   #anim {
+     width: 100px;
+     height: 100px;
+     background-color: red;
+     transition: width 2s;
+     transition: all 300ms ease-in-out 100ms;
+     transition-property: width;
+     transition-duration: 2s;
+     transition-timing-function: linear;
+     transition-delay: 1s;
+   }
+   #anim:hover {
+     width: 600px;
+   }
+   #cubic {
+     width: 100px;
+     height: 100px;
+     background-color: blue;
+     transition: width 1s, height 1s, background-color 1s, transform 1s;
+   }
+   #cubic:hover {
+     width: 300px;
+     height: 300px;
+     background-color: orange;  
+     transform: rotate(180deg);
+   }
+  </style>
+</head>
+<body>
+  <h1>Welcome to our Cafe Shop</h1>
+  <div>
+    <h2>This is some main point about our cafe shop information:</h2>
+    <ul>
+      <li>Brand Name: <b>KAFE</b></li>
+      <li>Location: Takeo province, Cambodia</li>
+      <li>Owner: Jennifer and Thomas</li>
+      <li>Operating Days Monday-Sunday</li>
+      <li>Opening and Closing Hours: <b>7:00AM-8:00PM</b></li>
+    </ul>
+  </div>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Drinks List</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Matcha Latte</td>
+      <td>2$</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Iced Americano</td>
+      <td>1.80$</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Green Tea Frappe</td>
+      <td>2.10$</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Hot Chocolate</td>
+      <td>1.50$</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Fresh Fruits Smoothie</td>
+      <td>2$</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Butter Croissant</td>
+      <td>1.50$</td>
+    </tr>
+  </table>
+  <h2>Thanks to our customer for support.❤️🙏</h2>
+  <a href="https://www.aub.edu.kh" target="_blank">Acleda University</a> <br>
+  <a href="https://www.aub.edu.kh" target="_self">Acleda University</a>
+
+  <h2>Image as a Link</h2>
+  <a href="https://www.aub.edu.kh"><img src="image.png" alt="Acleda University" style="width:42px;height:42px;"></a>
+  <h2>Download as a Link</h2>
+  <a href="file.pdf" download>Download File</a>
+  <h2>Navigation Link</h2>
+  <a href="#section">Jump to section Id</a>
+  <h1 id="section">Welcome to AUB !!!</h1>
+  <p>this section for id section</p>
+  <h1>Link to Audio Media</h1>
+  <audio controls>
+    <source src="Coffee.mp3" type="audio/mpeg">
+  </audio>
+
+  <h1>Link to Video Media</h1>
+  <video width="640" height="360" poster="OIP.webp" controls>
+    <source src="KAFE.mp4" type="video/mp4">
+  </video>
+
+  <h2>Animated Images</h2>
+  <img src="animated_image.gif" alt="Computer man" style="width:800px;height:200px;">
+  <h1>Scalable Vector Graphics SVG Concepts, Advantages</h1>
+  <svg width="400" height="120" viewBox="0 0 400 120">
+    <rect x="10" y="10" width="380" height="100" stroke="red" stroke-width="6" fill="blue" />
+    <text x="200" y="68" font-family="Arial" text-anchor="middle" font-size="20" fill="white">KAFE</text>
+  </svg>
+
+  <h2>CSS float: left</h2>
+  <p>In this example, the image will float to the left in the div, and the text will wrap around the image.</p>
+  <div>
+    <img class="float-img" src="coffee.jpg" alt="coffee">
+    Welcome to my café shop, a cozy and peaceful place where everyone can enjoy delicious coffee, tasty desserts, and
+    relaxing moments. Our café is designed to provide a warm and welcoming atmosphere where customers can take a break
+    from their busy lives, spend time with friends, or enjoy some quiet moments alone.
+    We offer a variety of drinks, including freshly brewed coffee, cappuccino, latte, iced Americano, matcha, and
+    refreshing fruit drinks. Customers can also enjoy delicious cakes, cookies, and other freshly prepared desserts.
+    Our café focuses on quality, comfort, and friendly service. With beautiful decorations, comfortable seating, soft
+    music, and a relaxing environment, we hope to make every visit special and memorable. Whether you want to study,
+    work, read a book, meet friends, or simply enjoy your favorite drink, our café is the perfect place for you. Come
+    and visit us where every cup brings happiness and every moment becomes a beautiful memory!
+  </div>
+
+  <div style="clear: both;"></div>
+
+  <div class="demo">
+    <h2>life with coffee:</h2>
+    <p class="ex1">
+      <span>Life</span>
+      <span>being</span>
+      <span>after coffee</span>
+    </p>
+
+    <h2>My coffee:</h2>
+    <p class="ex2">
+      <span>Sip slow</span>
+      <span>enjoy</span>
+      <span>life</span>
+    </p>
+
+    <h2>cool with coffee:</h2>
+    <p class="ex3">
+      <span>Stay cozy</span>
+      <span>drink</span>
+      <span>coffee</span>
+    </p>
+
+    <h2>Coffee lover:</h2>
+    <p class="ex4">
+      <span>Good days</span>
+      <span>start with</span>
+      <span>coffee</span>
+    </p>
+
+    <h2>Growth with drink:</h2>
+    <p class="ex5">
+      <span>Happiness is a</span>
+      <span>warm cup</span>
+      <span>of coffee</span>
+    </p>
+
+    <h2>coffee:</h2>
+    <p class="ex6">
+      <span>coffee</span>
+      <span>makes everything</span>
+      <span>better</span>
+    </p>
+  </div>
+
+  <h1>Our drinks menu</h1>
+  <div class="container">
+    <div class="city">
+      <h2>Matcha latte</h2>
+      <p>Ingredients: Matcha powder, fresh milk, water, ice, and optional sweetener.</p>
+      <p>Benefits: Contains antioxidants and provides a gentle source of caffeine.</p>
+    </div>
+
+    <div class="city">
+      <h2>coffee</h2>
+      <p>Ingredients: Coffee beans, hot water, milk, and sugar.</p>
+      <p>Benefits: Can help improve alertness and concentration.</p>
+    </div>
+    <div class="city">
+      <h2>Americano </h2>
+      <p>Ingredients: Espresso and hot or cold water.</p>
+      <p>Benefits: A simple, low-calorie coffee option when served without added sugar.</p>
+    </div>
+  </div>
+  <h1>Our bakery </h1>
+  <div class="flex-container">
+    <div class="flexbox">
+      <h2>Brownie</h2>
+      <p>Description:Our chocolate chip cookies are freshly baked with a delicious combination of butter, brown sugar,
+        and chocolate chips. They have a soft and chewy center with slightly crispy edges. These cookies are a perfect
+        sweet treat for any time of the day.</p>
+      <p>Ingredients: Dark chocolate, butter, sugar, eggs, flour, and cocoa powder.</p>
+    </div>
+
+    <div class="flexbox">
+      <h2>Butter Croissant🥐</h2>
+      <p>Description:Our butter croissant is a classic French pastry made with layers of buttery dough. It is baked
+        until golden brown, creating a crispy outside and a soft, airy inside. Enjoy it with your favorite coffee or
+        tea.</p>
+      <p>Ingredients: Flour, butter, milk, yeast, sugar, and salt.</p>
+    </div>
+
+    <div class="flexbox">
+      <h2>Chocolate Chip Cookies🍪</h2>
+      <p>Description:Our chocolate chip cookies are freshly baked with a delicious combination of butter, brown sugar,
+        and chocolate chips. They have a soft and chewy center with slightly crispy edges. These cookies are a perfect
+        sweet treat for any time of the day.</p>
+      <p>Ingredients: Flour, butter, brown sugar, eggs, vanilla, and chocolate chips.</p>
+    </div>
+  </div>
+  <hr>
+  <div id="box">Stay grounded, keep growing</div>
+
+  <h1>Life quote</h1>
+  <div class="box">
+    <div class="item html">a little coffee, a little hope</div>
+    <div class="item css">Small steps, big dream</div>
+    <div class="item javaScript">Brew happiness, live simply</div>
+    <div class="item web">Just me, my coffee, and my dream</div>
+  </div>
+
+  <h1>life vision</h1>
+  <div class="gridbox">
+    <div class="item html">creating a life i truly love</div>
+    <div class="item css">a little progress every day</div>
+    <div class="item javaScript">Purpose over perfection</div>
+    <div class="item web">Big dream, live simple</div>
+    <div class="item net">Freedom</div>
+    <div class="item c">Growth</div>
+    <div class="item python">inner peace</div>
+  </div>
+  <p>Welcome to learning class of Animation!</p>
+  <div id="animation">Animation!</div>
+  <p><b>Note:</b> When an animation is finished, it goes back to its original style.</p>
+  <h1>Welcome to learning class of 2D transformation!</h1>
+
+   <div id="myDiv">
+   This div element is moved to different direction from its current position.
+   </div>
+   <div id="myDiv">
+   This div element is moved to different direction from its current position.
+   </div>
+   <h1>Welcome to learning class of 3D transformation!</h1>
+   <div class="Individual">
+   <div class="box">rotateX(45deg)</div>
+   </div>
+     <h1>CSS animation-direction Property</h1>
+     <p>The animation-direction property specifies whether an animation should be played forwards, backwards or in alternate cycles. The following example uses the value "alternate" to make the animation run forwards first, then backwards:</p>
+   <div id="floatImage">We miss you</div>
+     <h1>Welcome to learning transitions of HTML5!</h1>
+     <p>Hover over the div element below, to see the transition effect:</p>
+     <div id="anim">hello</div>
+     <hr>
+     <h1>Cubic Bezier Curve Anatomy !</h1>
+     <p>Hover over the div element below, to see the Cubic Bezier Curve Anatomy effect:</p>
+     <div id="cubic">Wishing</div>
+     <hr>
+     <h1>Animation!</h1>
+     <p>Hover over the div element below, to see the animation effect:</p>
+   <div id="anim">Enjoy your drinks</div>
+  </body>
+</html>
